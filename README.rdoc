@@ -1,6 +1,6 @@
 == README
 
-Dude, you better, read me!
+Dude, you better read me!
 
 
 

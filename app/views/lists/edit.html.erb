@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h2>EDITING LISTS!</h2>
+</div>
+<br><br><br>
+
+<%= form_for @list do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :type %>
+  <%= f.text_field :type %>
+
+  <%= f.submit %>
+
+<% end %>
+
+
+<%= link_to "Delete This Thing!", list_path(@list), :method => :delete%>
