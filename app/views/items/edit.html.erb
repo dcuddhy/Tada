@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h2>EDITING ITEMS!</h2>
+</div>
+<br><br><br>
+
+<%= form_for @item do |f| %>
+
+  <%= f.text_field :name, class:"col-md-8" %>
+
+  <%= f.check_box :groceries %>
+  Groc
+
+  <%= f.check_box :home_improvement %>
+  H_Impr
+
+  <%= f.check_box :electronics %>
+  Elctr
+
+  <%= f.check_box :clothes %>
+  Clths
+
+  <%= f.submit class:"btn btn-primary pull-right" %>
+<% end %>
+
+
+
+
+
+
+
+
+<%= link_to 'Show', @item %> |
+<%= link_to 'Back', items_path %>

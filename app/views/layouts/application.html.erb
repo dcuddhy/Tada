@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
@@ -14,6 +15,12 @@
   </div>
 </div>
 <div class="container">
+
+
+
+
+
+
   <%= yield %>
 </div>
 <footer>
@@ -21,6 +28,13 @@
     <!-- footer stuff here -->
   </div>
 </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 
 </body>
 </html>

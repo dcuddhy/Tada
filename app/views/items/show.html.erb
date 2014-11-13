@@ -1,0 +1,23 @@
+<h2>Item Details</h2>
+
+<table class="table" width="100%">
+      <tr>
+<% if notice.is_a? String %>
+
+<div class="text-center alert alert-info"><%= notice %></div>
+<% end %>
+
+
+        <tr><td width="100%" class="pull-left"><strong>Name: </strong><%= @item.name %></td></tr>
+        <tr><td width="100%" class="pull-left"><strong>Groceries: </strong><%= @item.groceries %></td></tr>
+      </tr>
+</table>
+
+
+
+
+
+
+
+<%= link_to "Edit", edit_item_path(@item) %>
+<%= link_to 'Back', items_path %>

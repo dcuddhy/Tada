@@ -1,0 +1,56 @@
+<div class= "page-header">
+<div class= "pull-right">
+<%= link_to "Add a Item", new_item_path, class:"btn btn-success" %>
+</div>
+
+  <h2>Items</h2>
+</div>
+
+
+
+
+
+<table class="table">
+  <tbody>
+    <th width="200px">Name</th><th width="200px" ></th><th ></th><th></th><th width="5px"></th><th width="5px"></th>
+    <tr>
+      <td colspan ="6">
+      <%= form_for @item do |f| %>
+
+        <%= f.text_field :name, class:"col-md-8" %>
+
+        <%= f.check_box :groceries %>
+        Groc
+
+        <%= f.check_box :home_improvement %>
+        H_Impr
+
+        <%= f.check_box :electronics %>
+        Elctr
+
+        <%= f.check_box :clothes %>
+        Clths
+
+        <%= f.submit class:"btn btn-primary pull-right" %>
+
+      <% end %>
+      </td>
+    </tr>
+
+      <% @items.each do |item| %>
+
+        <tr>
+
+          <td class="col-md-8"><%= item.name %></td>
+          <td><%= item.groceries %></td>
+          <td><%= item.home_improvement %></td>
+          <td><%= item.electronics %></td>
+          <td><%= item.clothes %></td>
+          <td></td>
+          <td><%= link_to "Edit", edit_item_path(item), class:"btn btn-warning pull-right" %><td>
+          <td><%= link_to "Delete", item, class:"btn btn-danger pull-right", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+
+      <% end %>
+  </tbody>
+</table>
