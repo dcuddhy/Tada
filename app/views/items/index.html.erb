@@ -1,40 +1,42 @@
-<div class= "page-header">
-<div class= "pull-right">
-<%= link_to "Add a Item", new_item_path, class:"btn btn-success" %>
-</div>
-
+<div>
   <h2>Items</h2>
 </div>
 
+  <%= link_to_if params[:filter], "All Items", items_path %> |
+  <%= link_to_if params[:filter] != 'groceries', "Groceries", items_path(filter:"groceries") %> |
+  <%= link_to_if params[:filter] != 'home_improvement', "Home Improvement", items_path(filter:"home_improvement") %> |
+  <%= link_to_if params[:filter] != 'electronics', "Electronics", items_path(filter:"electronics") %> |
+  <%= link_to_if params[:filter] != 'clothes', "Clothes", items_path(filter:"clothes") %> |
 
 
 
 
 <table class="table">
   <tbody>
-    <th width="200px">Name</th><th width="200px" ></th><th ></th><th></th><th width="5px"></th><th width="5px"></th>
+    <th width="200px">Name</th><th>groc</th><th >h.imp</th><th>elct</th><th>clths</th><th></th><th></th><th></th><th></th>
     <tr>
-      <td colspan ="6">
+      <th colspan ="12">
       <%= form_for @item do |f| %>
 
         <%= f.text_field :name, class:"col-md-8" %>
+        &nbsp;&nbsp;&nbsp;&nbsp;
 
         <%= f.check_box :groceries %>
-        Groc
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <%= f.check_box :home_improvement %>
-        H_Impr
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <%= f.check_box :electronics %>
-        Elctr
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <%= f.check_box :clothes %>
-        Clths
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <%= f.submit class:"btn btn-primary pull-right" %>
 
       <% end %>
-      </td>
+    </th>
     </tr>
 
       <% @items.each do |item| %>
